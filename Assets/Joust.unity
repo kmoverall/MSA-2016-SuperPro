@@ -267,8 +267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e681c2e1b4e9d04b9f0ea1487e95c1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gravity: -.980000019
-  MaxValue: 1
+  MaxValue: 110
+  MarginOfError: 5
+  InitialGravity: .00100000005
+  GravityIncreaseRate: 0
+  AxisSensitivity: .000500000024
+  AxisDeadZone: .100000001
 --- !u!1 &206020130
 GameObject:
   m_ObjectHideFlags: 0
