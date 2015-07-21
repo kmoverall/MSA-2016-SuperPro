@@ -6,7 +6,7 @@ using System.Collections;
 [RequireComponent (typeof(Slider))]
 public class SliderBalancer : Balancer {
 
-	Slider slider;
+	/*Slider slider;
 	string axis = "Horizontal";
 
 	// Use this for initialization
@@ -23,5 +23,5 @@ public class SliderBalancer : Balancer {
 		//A nasty way to transform the range -MaxValue .. MaxValue into slider.minValue .. slider.maxValue
 		slider.value = (balanceValue / MaxValue + 1) * ((slider.maxValue - slider.minValue) / 2) + slider.minValue;
 		
-	}
+	}*/
 }
