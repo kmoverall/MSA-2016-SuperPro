@@ -6,6 +6,9 @@ public class JousterBoost : MonoBehaviour {
 
 	public float boostSpeed;
 	public float boostFalloff;
+	public float maxSpeed;
+
+	float jousterVelocity;
 
 	CharacterController jouster;
 
@@ -17,7 +20,15 @@ public class JousterBoost : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetButtonDown("Boost")) {
-			jouster.Move(Vector3.forward * Time.deltaTime);
+			jousterVelocity += boostSpeed;
+			jousterVelocity = Mathf.Min(maxSpeed, jousterVelocity);
 		}
+		jouster.Move(Vector3.forward * Time.deltaTime * jousterVelocity);
+		jousterVelocity -= boostSpeed * Time.deltaTime;
+		jousterVelocity = Mathf.Max(0, jousterVelocity);
+	}
+
+	void OnControllerColliderHit() {
+		Application.LoadLevel(0);
 	}
 }
